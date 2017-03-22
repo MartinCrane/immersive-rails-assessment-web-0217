@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :appearances
 
   get 'login', to: 'sessions#new'
-  get 'logout', to: 'sessions#delete'
+  get 'logout', to: 'sessions#destroy'
   get 'register', to: 'users#new'
 end

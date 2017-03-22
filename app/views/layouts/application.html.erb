@@ -9,9 +9,9 @@
   </head>
 
   <body>
-    <%= link_to "/logout" %>
-    <% if flash[:errors]%>
-    <% flash[:errors].each do |error|%>
+    <%= link_to "LOGOUT",  "/logout"%>
+    <% if flash[:error]%>
+    <% flash[:error].each do |error|%>
     <h3><%=error%></h3>
     <% end%>
     <% end%>
