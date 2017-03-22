@@ -1,6 +1,6 @@
 class Guest < ApplicationRecord
-  has_many :guest_episodes
-  has_many :episodes through: :appearances
+  has_many :appearances
+  has_many :episodes, through: :appearances
   validates :name, uniqueness: true
 
 

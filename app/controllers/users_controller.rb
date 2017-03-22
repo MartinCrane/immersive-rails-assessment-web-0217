@@ -5,8 +5,10 @@ class UsersController < ApplicationController
   end
 
   def create
+
     if user = User.create(user_params)
-      redirect_to user_path
+
+      redirect_to user_path(user)
     else
       flash[:error] = user.errors
       redirect_to new_user_path
@@ -16,6 +18,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
   end
+
+
 
   private
 

@@ -5,6 +5,7 @@ class GuestsController < ApplicationController
   end
 
   def show
+    @guest = Guest.find_by(id: params[:id])
   end
 
   def new
@@ -27,5 +28,5 @@ class GuestsController < ApplicationController
   def user_params
     params.require(:user).permit(:username, :password)
   end
-  
+
 end
