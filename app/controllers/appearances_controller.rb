@@ -5,7 +5,9 @@ class AppearancesController < ApplicationController
   end
 
   def show
+
     @appearance = Appearance.find_by(id: params[:id])
+    byebug
   end
 
   def new
@@ -15,7 +17,8 @@ class AppearancesController < ApplicationController
   def create
     # guest_id = Guest.name_search_to_id(apperance_params[:guest_name])
     # episode_id = Episode.number_search_to_id(apperance_params[:episode_number])
-    if appearance = Appearance.create(apperance_params)
+    appearance = Appearance.create(apperance_params)
+    if appearance.valid?
       redirect_to appearance_path(appearance)
     else
       flash[:error] = appearance.errors

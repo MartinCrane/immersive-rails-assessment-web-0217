@@ -1,5 +1,5 @@
 class Appearance < ApplicationRecord
-  has_many :guests
-  has_many :episodes
+  belongs_to :guest
+  belongs_to :episode
   validates :rating, inclusion: { in: 1..5 }
 end

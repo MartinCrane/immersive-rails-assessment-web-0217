@@ -1,0 +1,6 @@
+<ul>
+  <% @appearances.each do |appearance| %>
+    <li><%= "Appearance episode: #{appearance.episode.number} - #{appearance.episode.date.strftime("%B %d, %Y")}"%></li>
+      <li><%= "Guest: #{appearance.guest.name} - #{appearance.guest.occupation}"%></li>
+  <% end %>
+</ul>

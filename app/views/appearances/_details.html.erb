@@ -1,8 +1,9 @@
+
 <%= form_for appearance do |f| %>
-<%= f.label :guest_id%>
-<%= f.text_field :guest_id %><br />
+<%= f.user.name %>
 <%= f.label :episode_number%>
-<%= f.text_field :episode_number %><br />
+<%= f.collection_select(:episode_id, Episode.all, :id, :number, {:include_blank => true}) %>
 <%= f.label :rating%>
 <%= f.text_field :rating %><br />
+<%= f.submit %>
 <% end %>
